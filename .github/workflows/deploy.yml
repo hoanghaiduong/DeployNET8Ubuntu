@@ -17,10 +17,10 @@ jobs:
       uses: docker/setup-buildx-action@v3
 
     - name: Build Docker image
-      run: docker build -t myapp:latest .
+      run: docker build -t DeployNET8Ubuntu:latest .
 
     - name: Load Docker image into KinD
-      run: kind load docker-image myapp:latest
+      run: kind load docker-image DeployNET8Ubuntu:latest
 
     - name: Apply Kubernetes manifests
       run: kubectl apply -f k8s/
