@@ -13,14 +13,17 @@ public class Program
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
-
+        builder.WebHost.ConfigureKestrel(serverOptions =>
+        {
+            serverOptions.ListenAnyIP(5876); // Lắng nghe tất cả IP
+        });
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
- 
-            app.UseSwagger();
-            app.UseSwaggerUI();
-     
+
+        app.UseSwagger();
+        app.UseSwaggerUI();
+
 
         app.UseHttpsRedirection();
 
@@ -33,7 +36,7 @@ public class Program
 
         app.MapGet("/weatherforecast", (HttpContext httpContext) =>
         {
-            var forecast =  Enumerable.Range(1, 5).Select(index =>
+            var forecast = Enumerable.Range(1, 5).Select(index =>
                 new WeatherForecast
                 {
                     Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
