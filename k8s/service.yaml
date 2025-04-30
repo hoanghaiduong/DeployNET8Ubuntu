@@ -7,6 +7,6 @@ spec:
   selector:
     app: deploynet8ubuntu
   ports:
-    - port: 80
+    - port: 5876
       targetPort: 5876
       nodePort: 30080
