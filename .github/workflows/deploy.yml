@@ -26,4 +26,4 @@ jobs:
       run: kubectl apply -f k8s/
 
     - name: Expose Service with NodePort
-      run: kubectl expose deployment deploynet8ubuntu --type=NodePort --name=deploynet8ubuntu-service --port=80 --target-port=5876 --node-port=30080
+      run: kubectl expose deployment deploynet8ubuntu --type=NodePort --name=deploynet8ubuntu-service --port=80 --target-port=5876
