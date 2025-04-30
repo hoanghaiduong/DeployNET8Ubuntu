@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: DeployNET8Ubuntu-service
+  name: deploynet8ubuntu-service
 spec:
   type: NodePort
   selector:
-    app: DeployNET8Ubuntu
+    app: deploynet8ubuntu
   ports:
     - port: 80
       targetPort: 80
