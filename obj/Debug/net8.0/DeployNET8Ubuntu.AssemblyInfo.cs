@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DeployNET8Ubuntu")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4af06e82877c6e45d07e1a612acd0aa7cc6c0cec")]
 [assembly: System.Reflection.AssemblyProductAttribute("DeployNET8Ubuntu")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DeployNET8Ubuntu")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

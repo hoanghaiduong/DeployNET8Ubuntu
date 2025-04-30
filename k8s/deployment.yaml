@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: DeployNET8Ubuntu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: DeployNET8Ubuntu
+  template:
+    metadata:
+      labels:
+        app: DeployNET8Ubuntu
+    spec:
+      containers:
+      - name: DeployNET8Ubuntu
+        image: DeployNET8Ubuntu:latest
+        ports:
+        - containerPort: 80
