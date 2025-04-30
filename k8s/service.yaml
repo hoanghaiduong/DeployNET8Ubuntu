@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: deploynet8ubuntu-service
 spec:
+  type: NodePort
   selector:
-    app: deploynet8ubuntu  
+    app: deploynet8ubuntu
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 5876
-      nodePort: 30080  
-  type: NodePort
+      port: 80          # Service trong cluster
+      targetPort: 5876  # Container port
+      nodePort: 30080   # Port máy host để truy cập
