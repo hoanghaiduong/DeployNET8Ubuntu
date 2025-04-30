@@ -23,4 +23,5 @@ RUN dotnet publish "./DeployNET8Ubuntu.csproj" -c $BUILD_CONFIGURATION -o /app/p
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+ENV ASPNETCORE_HTTP_PORTS=5876
 ENTRYPOINT ["dotnet", "DeployNET8Ubuntu.dll"]
