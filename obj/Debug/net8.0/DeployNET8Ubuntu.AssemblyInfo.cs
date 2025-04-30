@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DeployNET8Ubuntu")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2492b22ad77cd86c72fd5a2aa55f16f47c20a420")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+543eb30975acbe6b52c06151a020be87a838d874")]
 [assembly: System.Reflection.AssemblyProductAttribute("DeployNET8Ubuntu")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DeployNET8Ubuntu")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

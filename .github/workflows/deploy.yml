@@ -24,5 +24,12 @@ jobs:
 
     - name: Apply Kubernetes manifests
       run: kubectl apply -f k8s/
+    - name: Port Forward
+      run: kubectl port-forward service/deploynet8ubuntu-service 5876:80 &
+    - name: kubectl rollout restart deployment
+      run: kubectl rollout restart deployment/deploynet8ubuntu
+    - name: Check pod status
+      run: kubectl get pods
+
 
 

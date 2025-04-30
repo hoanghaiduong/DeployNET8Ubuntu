@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DeployNET8Ubuntu.props" />
+</Project>

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "HL9iOe6nSb7P6Okp7soWXgp5qIy1wJ2HhAcDtHcmTgs=",
+  "Source": "DeployNET8Ubuntu",
+  "BasePath": "_content/DeployNET8Ubuntu",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
