@@ -11,9 +11,8 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("97f8287d-6c2f-497a-ab88-6caae6b38b1e")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DeployNET8Ubuntu")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ac537f9bb0e8c43d0573e6d8172d3654e80c16e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DeployNET8Ubuntu")]
