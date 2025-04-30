@@ -15,5 +15,6 @@ spec:
       containers:
       - name: deploynet8ubuntu
         image: deploynet8ubuntu:latest
+        imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: 5876
