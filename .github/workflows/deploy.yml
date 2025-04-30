@@ -16,6 +16,9 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
 
+    - name: Docker prune
+      run: docker builder prune -af
+      
     - name: Build Docker image
       run: docker build -t deploynet8ubuntu:latest .
 
