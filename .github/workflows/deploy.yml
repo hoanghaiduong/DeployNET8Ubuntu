@@ -28,4 +28,4 @@ jobs:
           docker pull ${{ secrets.DOCKER_USERNAME }}/deploynet8ubuntu:${{ github.sha }}
           docker stop deploynet8ubuntu || true
           docker rm deploynet8ubuntu || true
-          docker run -d -p 5000:5876 --name deploynet8ubuntu ${{ secrets.DOCKER_USERNAME }}/deploynet8ubuntu:${{ github.sha }}
+          docker run -d -p 5876:5876 --name deploynet8ubuntu ${{ secrets.DOCKER_USERNAME }}/deploynet8ubuntu:${{ github.sha }}
