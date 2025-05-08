@@ -25,7 +25,7 @@ public class Program
         app.UseAuthorization();
 
         app.MapGet("/",()=>{
-            return "Hello World";
+            return "Hello World,  Đây là CI/CD WITH GITHUB ACTIONS SELF HOSTED RUNNER";
         });
       
         
