@@ -1,4 +1,4 @@
-name: CI/CD Deploy to KinD
+name: CI/CD Deploy to Docker
 
 on:
   push:
@@ -6,27 +6,26 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: self-hosted
-
     steps:
-    - name: Checkout source code
-      uses: actions/checkout@v3
+      - name: Checkout source code
+        uses: actions/checkout@v4
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-    - name: Build Docker image
-      run: docker build -t deploynet8ubuntu:latest .
+      - name: Build Docker image
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/deploynet8ubuntu:${{ github.sha }} .
 
-    - name: Load Docker image into KinD
-      run: kind load docker-image deploynet8ubuntu:latest
+      - name: Push Docker image
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+          docker push ${{ secrets.DOCKER_USERNAME }}/deploynet8ubuntu:${{ github.sha }}
 
-    - name: Apply Kubernetes manifests
-      run: kubectl apply -f k8s/
-
-    - name: Restart deployment
-      run: kubectl rollout restart deployment/deploynet8ubuntu
-
-    - name: Check pod status
-      run: kubectl get pods
+      - name: Deploy locally on WSL
+        run: |
+          docker pull ${{ secrets.DOCKER_USERNAME }}/deploynet8ubuntu:${{ github.sha }}
+          docker stop deploynet8ubuntu || true
+          docker rm deploynet8ubuntu || true
+          docker run -d -p 5000:5876 --name deploynet8ubuntu ${{ secrets.DOCKER_USERNAME }}/deploynet8ubuntu:${{ github.sha }}

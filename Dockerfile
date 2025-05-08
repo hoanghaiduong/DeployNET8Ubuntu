@@ -5,7 +5,7 @@ USER app
 WORKDIR /app
 
 EXPOSE 5876
-EXPOSE 30080
+
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
